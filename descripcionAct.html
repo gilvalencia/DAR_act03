@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ACTIVIDAD 03_DAR_Interacción con un Servidor (WEB SCRAPPING)</title>
+	<link rel="stylesheet" href="css/style_01.css">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+</head>
+
+<body>
+	<center><img src="images/unir2.png"></center>
+	<br>
+	
+	<center><table id="base">
+		<tr>
+			<th>
+				<h2>ACTIVIDAD 03</h2>
+				<h3>Interacción con un Servidor (Web Scrapping).</h3>
+				<h2>DESARROLLO DE LA ACTIVIDAD.</h2>
+			</th>
+			
+		</tr>
+		<tr>
+			<td>
+				<h3>GRADO EN INGENIERÍA INFORMÁTICA<br>Desarrollo de Aplicaciones en Red</h3>
+				<h3 id="alumno"><u>Alumno</u>: José Antonio Gil Valencia</h3>
+				<center><h1><a href="archive/gii37t3tra_ACT03_Interacción con Servidor_GIL VALENCIA_JOSÉ ANTONIO_08862804F.pdf" class="buttonArchivo">gii37t3tra_ACT03_Interacción con Servidor_GIL VALENCIA_JOSÉ ANTONIO_08862804F</a></h1></center>
+				<center><h1><a href="archive/DAR_ACT03_GilValencia.zip" class="buttonArchivo">Proyecto JAVA WebScrapping</a></h1></center>
+			</td>
+		</tr>
+		
+	<table id="contenidoEje01">
+		<tr>
+			<td>
+				<form action="#">
+					<a href="index.html" class="button">Volver a Principal</a>
+					
+				</form>
+			</td>
+		</tr>
+	</table>
+
+	</table></center>
+	<br>
+	<table id="parte01">
+		<tr>
+			<th><h2><b>PARTE 01: ACCESO AL SERVIDOR.</u></b></h2></th>
+		</tr>
+	</table>
+
+	<table id="contenidoEjercicios2">
+		<tr>
+			<td>
+				<b>
+					<p><dd>La forma de llevar a cabo la actividad ha sido desarrollando un programa en <i>Java</i> que permita acceder a un servidor determinado y, a través de una serie de bucles, poder ir extrayendo la información de un foro determinado (en abierto) en formato HTML.</dd></p>
+					<p><dd>Para ello, he utilizado la herramienta de Java, <i>JSoup</i>, ya que posee una amplia librería para poder acceder a un servidor y poder ir extrayendo su contenido a partir de las etiquetas del propio código HTML de la página web.</dd></p>
+					<p><dd>Una vez obtenido el documento HTML con todo el contenido requerido del foro, la presentación del contenido se ha presentado en un proyecto web (HTML) que, al interactuar el usuario mediante un botón, aparece el contenido del HTML del foro con todas las conversaciones indexadas de todas las páginas. Para llevar a cabo esta interacción, utilicé un código <i>Javascript</i> para simular la interacción del usuario con dicho documento, empleando <i>AJAX</i> para no tener que cambiar de página al hacer click sobre el botón.</dd></p>
+					<p><dd>A continuación, se presenta la descripción de cada apartado de la actividad, teniendo en cuenta que dicha descripción también se recoge en un enlace interno dentro de la propia página web presentada en la actividad (<i>https://gilvalencia.github.io/DAR_act03/</i>).</dd></p>
+				</ol></b>
+			</td>
+		</tr>
+	</table>
+
+<br>
+	<table id="parte02">
+		<tr>
+			<th><h2><b>PARTE 02: DESCARGA DE FICHEROS.</u></b></h2></th>
+		</tr>
+	</table>
+
+	<table id="contenidoEjercicios2">
+		<tr>
+			<td>
+				<b>
+					<p><dd>En los documentos anexos a esta memoria, se encuentra el proyecto de Java con la implementación requerida para hacer el método de scrapping sobre la URL <i>https://www.verema.com/foros/hosteleria/temas</i>.</dd></p>
+					<center><a href="https://www.verema.com/foros/hosteleria/temas" class="buttonPagina">Visitar Página Foro</a></center>
+					<p><dd>Este trabajo se ha realizado con la librería <i>JSoup</i> de Java. En particular con sus clases <i>Document, Elements</i> y <i>Element</i>, y sus diversos métodos que, en función de la etiqueta o información a recuperar de la web, se utilizaban unos u otros (<i>select(), absUrl(), getElementByTag(), getElementByClass()</i>, entre otros).</dd></p>
+					<p><dd>Debido a la estructura de la web seleccionada, la extracción se ha tenido que realizar por partes. El método <i>getStatusConnectionCode()</i> previamente devuelve el código de estado Http en la que se encuentra la web. Si se encuentra en cualquier otro estado que no sea el 200 (OK), salta una excepción.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria01.png"></center>
+					<p><dd>A continuación, si el servidor es correcto, se accede al programa de <i>scrapping</i>, descargando todo el documento HTML de la página en cuestión con el método <i>getHtmlDocument()</i> y almacenándolo en el objeto document de la clase Document de JSoup.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria02.png"></center>
+					<p><dd>Una vez se ha obtenido la información, lo que queda es jugar con los nombres y tipos de etiquetas para ir obteniendo la información de dicho documento HTML.</dd></p>
+					<p><dd>Como el foro consta de varias páginas, toda esta acción se realiza dentro de un bucle <i>for</i>, para realizarlo por cada página definida en la URL de entrada.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria03.png"></center>
+				</ol></b>
+			</td>
+		</tr>
+	</table>
+
+<br>
+	<table id="parte03">
+		<tr>
+			<th><h2><b>PARTE 03: CLASES Y MÉTODOS DE JSoup.</u></b></h2></th>
+		</tr>
+	</table>
+	<table id="parte03B">
+		<tr>
+			<th><h2><b>3.1: Parte 01. Selección de información general.</u></b></h2></th>
+		</tr>
+	</table>
+
+	<table id="contenidoEjercicios2">
+		<tr>
+			<td>
+				<b>
+					<p><dd>El foro está formado por 5 páginas iniciales, en las que se describe un pequeño resumen de lo que trata cada foro en particular. Después, una segunda parte interna describe lo que incluye cada post, con cada respuesta de los usuarios sobre ese tema.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria04.png"></center>
+					<center><p><i>Captura de la página con su parte correspondiente del código HTML.</i></p></center><br>
+					<p><dd><dd>Utilizando el método <i>select()</i>, y definiendo las palabras reservadas del tipo de etiqueta y el tipo de clase de cada etiqueta, se va a ir seleccionando de forma jerárquica el contenido hasta obtener la información requerida.</dd></p>
+					<ul>
+					<li type=”square”><p><dd>El objeto <i>temas</i> recoge el bloque <i>table.temas</i> (etiqueta table de clase temas). En él se recogen todos los temas por cada página.</dd></p></li>
+					<li type=”square”><p><dd>El objeto <i>trs</i> selecciona los elementos que incluyan <i>tr</i> dentro de ese bloque.</dd></p></li>
+					<li type=”square”><p><dd>Y dentro de estos <i>trs</i>, <i>h5</i> recoge todas las etiquetas que incluyan <i>h5</i>, que son los que recogen el enlace y el nombre de cada tema del foro.</dd></p></li>
+					<center><img style="width: 50%;" src="images/memoria05.png"></center>
+					</ul>
+					<p><dd>Será el tamaño de <i>h5</i> el que recogerá el número de temas por cada página del servidor, obteniendo el resultado en las salidas:</dd></p>
+					<center><img style="width: 50%;" src="images/memoria06.png"></center>
+					<center><p><i>Ejemplo del método <i>h5.size()</i> que obtiene el tamaño del array para obtener el número de temas por página.</i></p></center><br>
+					<p><dd>De nuevo un bucle <i>for</i> nos permite obtener toda la información incluida dentro de cada tema, como <i>Título, Autor</i> y <i>Enlace</i>, a través del cual accederemos nuevamente para hacer un <i>scrapping</i> más detallado de cada tema.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria07.png"></center>
+					<p><dd>Cada elemento <i>tr</i> tendrá un contenido <i>h5</i>, el cual recogerá enlace (<i>String enlace = a1.absUrl("href");</i>), titulo del tema (<i>String titulo = a1.getElementsByTag("a").text();</i>) y autor (<i>String autor = elem.getElementsByClass("forum-page-user-nick").text();</i>). En la captura de abajo se observa esta información dentro del código HTML del servidor:</dd></p>
+					<center><img style="width: 50%;" src="images/memoria08.png"></center>
+					<p><dd>Una vez se obtiene el enlace de cada tema (<i>href</i>), este mismo se utiliza para realizar una nueva búsqueda de extracción, pero esta vez ya dentro de cada tema. Como cada tema tiene varias páginas (hay temas que, internamente, tienen hasta 10 páginas de conversación) se tiene que preparar un código mediante bucle for para que recoja toda la información.</dd></p>
+					<p><dd>Aquí es donde he tenido más problemas, debido a las numerosas solicitudes sobre el servidor cuando ejecutaba el programa. El código lo he dejado comentado en el proyecto (líneas 138-216). Es exactamente igual que el que está operativo, pero con el bucle for añadido. Al final tuve que eliminar el bucle for para poder llevar a cabo la actividad. Pero para que quede constancia de que está hecho, lo dejo comentado.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria09.png"></center>
+					<br>
+					<center><img style="width: 50%;" src="images/memoria10.png"></center>
+					<center><p><i>Captura del error citado.</i></p></center>
+				</ol></b>
+			</td>
+		</tr>
+	</table>
+	<table id="parte03C">
+		<tr>
+			<th><h2><b>3.2: Parte 02. Selección de información interna de cada hilo.</u></b></h2></th>
+		</tr>
+	</table>
+	<table id="contenidoEjercicios2">
+		<tr>
+			<td>
+				<b>
+					<p><dd>Una vez dentro de cada tema, se obtiene el contenido HTML nuevamente a través del enlace obtenido en la primera parte. Y así para cada tema.</dd></p>
+					<p><dd>De este documento HTML, necesitaremos obtener <i>Título, número de respuestas al tema</i>, y todo el <i>contenido</i> de cada hilo del post.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria11.png"></center>
+					<ul>
+					<li type=”square”><p><dd>Una primera parte selecciona el contenido para obtener el <i>Título del tema</i>, recogido en la etiqueta <i>article.core-Thread</i>.</dd></p></li>
+					<center><img style="width: 50%;" src="images/memoria12.png"></center>
+					<li type=”square”><p><dd>A continuación, necesitamos el número de respuestas, recogidas en la etiqueta <i>core-Thread_Replies</i>.</dd></p></li>
+					<center><img style="width: 50%;" src="images/memoria13.png"></center>
+					<li type=”square”><p><dd>Y, finalmente, un bucle <i>for</i> va extrayendo la información de cada hilo del post, recogiendo todo el contenido en el array de etiquetas <i>div.foros_de_debate</i>.</dd></p></li>
+					<li type=”square”><p><dd>Dentro del mismo, se obtendrá el número del <i>Post</i> (<i>String numeroPost = numero01.getElementsByTag("a").text();</i>), nombre del autor (<i>String autorPost = autor01.getElementsByTag("span").text();</i>), fecha (<i>String fechaPost = elemento.getElementsByTag("time").text();</i>) y contenido íntegro (<i>String contenidoPost = parrafo.getElementsByTag("p").text();</i>).</dd></p></li>
+					<center><img style="width: 50%;" src="images/memoria14.png"></center>
+					<li type=”square”><p><dd>Para los contenidos, se observa en el código HTML que vienen definidos por párrafos (etiquetas "p"), con lo cual se tiene que hacer una selección dentro de un contenido con etiquetas <i>div.core-PostMessage</i>, e ir obteniendo cada párrafo mediante un bucle for.</dd></p></li>
+					</ul>
+					<center><img style="width: 50%;" src="images/memoria15.png"></center>
+					<center><img style="width: 50%;" src="images/memoria16.png"></center>
+					<center><img style="width: 50%;" src="images/memoria17.png"></center>
+					<p><dd>Durante el desarrollo de la implementación, utilicé el método de salida por consola <i>System.out.println()</i> para ir comprobando la información obtenida.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria18.png"></center>
+					<p><dd>Pero para trasladar dicha información a un documento HTML, utilicé la clase <i>PrintWriter</i> para crear el objeto <i>out</i>, con el fin de que el programa vaya escribiendo toda la información en el documento HTML <i>outScrapping.html</i> a medida que se va desarrollando. De ahí que, el método <i>out.println()</i> de la clase <i>PrintWriter</i>, comparta espacio con <i>System.out.println()</i>, para que obtengan la misma información en la misma posición, tanto de la consola como del documento.</dd></p>
+					<center><img style="width: 50%;" src="images/memoria19.png"></center>
+					<center><img style="width: 50%;" src="images/memoria20.png"></center>
+					<center><p><i>Capturas de la zona en la que los dos métodos comparten ubicación.</i></p></center>
+				</ol></b>
+			</td>
+		</tr>
+	</table>
+	
+<br>
+	<table id="parte04">
+		<tr>
+			<th><h2><b>PARTE 04: PRESENTACIÓN HTML Y Javascript.</u></b></h2></th>
+		</tr>
+	</table>
+
+	<table id="contenidoEjercicios2">
+		<tr>
+			<td>
+				<b>
+					<p><dd>Una vez se ejecuta el programa y se obtiene toda la información “scrappeada”, realizo el proyecto web desde un documento HTML de forma similar a las actividades anterior, subiendo todo su contenido a un repositorio GitHub.</dd></p>
+					<center><a href="https://gilvalencia.github.io/DAR_act03/" class="buttonPagina">https://gilvalencia.github.io/DAR_act03/</a></center>
+					<br>
+					<center><img style="width: 50%;" src="images/memoria21.png"></center>
+					<center><p><i>Salida por consola de la información "scrappeada".</i></p></center>
+					<br>
+					<p><dd>Para que el documento HTML recoja la información de forma indexada, utilicé las directivas propias de HTML escritas dentro de los parámetros (<i>Strings</i>) de información en el método <i>out.println()</i>. Una prueba de ello es la siguiente captura:</dd></p>
+					<center><img style="width: 50%;" src="images/memoria22.png"></center>
+					<center><p><i>Ejemplo de uso de directivas "p", "dd" y "br" de HTML.</i></p></center>
+					<center><img style="width: 50%;" src="images/memoria24.png"></center>
+					<center><p><i>Captura del documento HTML obtenido, visto en Notepadd++.</i></p></center><br>
+					<p><dd>El resultado, es el documento HTML <i>outScrapping.html</i>, con todo el contenido indexado:</dd></p>
+					<center><img style="width: 50%;" src="images/memoria23.png"></center>
+					<p><dd>El resto de datos relativos a la memoria se pueden consultar en el PDF descargable en la cabecera de esta propia página o en el siguiente enlace:</dd></p>
+					<center><h1><a href="archive/gii37t3tra_ACT03_Interacción con Servidor_GIL VALENCIA_JOSÉ ANTONIO_08862804F.pdf" class="buttonArchivo">gii37t3tra_ACT03_Interacción con Servidor_GIL VALENCIA_JOSÉ ANTONIO_08862804F</a></h1></center>
+					<p><dd>Asimismo, el proyecto Java con el programa de scrapping y el proyecto web completo subido a GitHub se puede descargar de los siguientes enlaces:</dd></p>
+					<center><h1><a href="archive/DAR_ACT03_GilValencia.zip" class="buttonArchivo">Proyecto JAVA WebScrapping</a></h1></center>
+					<center><h1><a href="archive/proyectoWebGitHub.zip" class="buttonArchivo">Proyecto Web en formato .zip</a></h1></center>
+					<center><h1><a href="https://github.com/gilvalencia/DAR_act03" class="buttonArchivo">Proyecto Web en Repositorio GitHub</a></h1></center>
+				</ol></b>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	
+	<center><div id="final">
+		<img src="images/unir.png">
+		<h5>Proyecto realizado para la ejecución de la ACTIVIDAD 03 <br> de la Asignatura "Desarrollo de Aplicaciones en Red".</h5>
+		<p><b>Curso 2020-2021</b></p>
+		<br>
+	</div></center>
+	
+</body>
+
+</html>

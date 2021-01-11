@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ACTIVIDAD 03_DAR_Interacción con un Servidor (WEB SCRAPPING)</title>
+	<link rel="stylesheet" href="css/style_01.css">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+</head>
+
+<body>
+	<center><img src="images/unir2.png"></center>
+	<br>
+	
+	<center><table id="base">
+		<tr>
+			<th>
+				<h2>ACTIVIDAD 03</h2>
+				<h3>Interacción con un Servidor (Web Scrapping)</h3>
+			</th>
+			
+		</tr>
+		<tr>
+			<td>
+				<h3>GRADO EN INGENIERÍA INFORMÁTICA<br>Desarrollo de Aplicaciones en Red</h3>
+				<h3 id="alumno"><u>Alumno</u>: José Antonio Gil Valencia</h3>
+				<center><h1><a href="archive/gii37t3tra_ACT03_Interacción con Servidor_GIL VALENCIA_JOSÉ ANTONIO_08862804F.pdf" class="buttonArchivo">gii37t3tra_ACT03_Interacción con Servidor_GIL VALENCIA_JOSÉ ANTONIO_08862804F</a></h1></center>
+				<center><h1><a href="archive/DAR_ACT03_GilValencia.zip" class="buttonArchivo">Proyecto JAVA WebScrapping</a></h1></center>
+			</td>
+		</tr>
+	</table></center>
+	<br>
+	<table id="nombreEjercicios2">
+		<tr>
+			<th><h2><b>INTERACCIÓN CON UN SERVIDOR.</u></b></h2></th>
+		</tr>
+	</table>
+
+	<table id="contenidoEjercicios2">
+		<tr>
+			<td>
+				<b>
+					<p>-Para realizar la siguiente actividad debemos acceder a un foro público y descargar de manera ordenada todas las conversaciones de todos los hilos de dicho foro.</p>
+					<p>-El enlace del foro aparece por defecto en el cuadro de diálogo.</p>
+					<p>-El botón "Mostrar Contenidos" mostrará el código HTML del documento HTML outScrapping.html en el que se lleva a cabo el proceso.</p>
+					<p>-Pulsando en el botón "Visitar Página" se puede acceder a la página sobre la cual se está haciendo la actividad.</p>
+					<p>-Pulsando en el botón "Descripción de la Actividad" se accede a la descripción y comentarios sobre desarrollo de la Actividad.</p>
+				</ol></b>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<table id="eje01">
+		<tr>
+			<td><h3><b>URL, por defecto, de la página a "scrappear".</b></h3></td>
+		</tr>
+	</table>
+	
+	<table id="contenidoEje01">
+		<tr>
+			<td>
+				<form action="#">
+					<b>URL:</b>
+					<input type="text" id="recurso2" size="80" value="https://www.verema.com/foros/hosteleria/temas"/>
+					<button type="button" id="btnCargarScrapping" class="button">Contenido "Scrappeado"</button>
+					<a href="https://www.verema.com/foros/hosteleria/temas" class="buttonPagina">Visitar Página</a>
+					<a href="descripcionAct.html" class="button">Descripción de la actividad</a>
+					
+				</form>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<table id="eje02">
+		<tr>
+			<td><h3><b>Contenido HTML FILTRADO "WebScrapping".</b></h3></td>
+		</tr>
+	</table>
+	
+	<table>
+		<tr>
+			<td>
+				
+				<div class="container" >
+					<div class="container" id="contenidos"></div>
+				</div>
+				
+			</td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+		$('#btnCargarScrapping').click(function(){
+			
+			var esperar = 5000;
+			$.ajax({
+				
+				url: "outScrapping.html",
+				beforeSend: function(){
+					$('#contenidos').text('Comprobando entradas de: https://www.verema.com/foros/hosteleria/temas?page=1&tab=foros...');
+				}	,
+				success : function(data){
+					setTimeout(function(){
+						$('#contenidos').html(data);
+					},esperar
+					);
+				}
+			});
+		
+		});
+	</script>
+	
+	<br>
+	
+	<center><div id="final">
+		<img src="images/unir.png">
+		<h5>Proyecto realizado para la ejecución de la ACTIVIDAD 03 <br> de la Asignatura "Desarrollo de Aplicaciones en Red".</h5>
+		<p><b>Curso 2020-2021</b></p>
+		<br>
+	</div></center>
+	
+</body>
+
+</html>
