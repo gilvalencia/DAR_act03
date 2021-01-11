@@ -106,7 +106,7 @@
 			<td>
 				<b>
 					<p><dd>El foro está formado por 5 páginas iniciales, en las que se describe un pequeño resumen de lo que trata cada foro en particular. Después, una segunda parte interna describe lo que incluye cada post, con cada respuesta de los usuarios sobre ese tema.</dd></p>
-					<center><img style="width: 50%;" src="images/memoria04.jpeg"></center>
+					<center><img style="width: 50%;" src="images/memoria04.jpg"></center>
 					<center><p><i>Captura de la página con su parte correspondiente del código HTML.</i></p></center><br>
 					<p><dd><dd>Utilizando el método <i>select()</i>, y definiendo las palabras reservadas del tipo de etiqueta y el tipo de clase de cada etiqueta, se va a ir seleccionando de forma jerárquica el contenido hasta obtener la información requerida.</dd></p>
 					<ul>
@@ -121,7 +121,7 @@
 					<p><dd>De nuevo un bucle <i>for</i> nos permite obtener toda la información incluida dentro de cada tema, como <i>Título, Autor</i> y <i>Enlace</i>, a través del cual accederemos nuevamente para hacer un <i>scrapping</i> más detallado de cada tema.</dd></p>
 					<center><img style="width: 50%;" src="images/memoria07.png"></center>
 					<p><dd>Cada elemento <i>tr</i> tendrá un contenido <i>h5</i>, el cual recogerá enlace (<i>String enlace = a1.absUrl("href");</i>), titulo del tema (<i>String titulo = a1.getElementsByTag("a").text();</i>) y autor (<i>String autor = elem.getElementsByClass("forum-page-user-nick").text();</i>). En la captura de abajo se observa esta información dentro del código HTML del servidor:</dd></p>
-					<center><img style="width: 50%;" src="images/memoria08.jpeg"></center>
+					<center><img style="width: 50%;" src="images/memoria08.jpg"></center>
 					<p><dd>Una vez se obtiene el enlace de cada tema (<i>href</i>), este mismo se utiliza para realizar una nueva búsqueda de extracción, pero esta vez ya dentro de cada tema. Como cada tema tiene varias páginas (hay temas que, internamente, tienen hasta 10 páginas de conversación) se tiene que preparar un código mediante bucle for para que recoja toda la información.</dd></p>
 					<p><dd>Aquí es donde he tenido más problemas, debido a las numerosas solicitudes sobre el servidor cuando ejecutaba el programa. El código lo he dejado comentado en el proyecto (líneas 138-216). Es exactamente igual que el que está operativo, pero con el bucle for añadido. Al final tuve que eliminar el bucle for para poder llevar a cabo la actividad. Pero para que quede constancia de que está hecho, lo dejo comentado.</dd></p>
 					<center><img style="width: 50%;" src="images/memoria09.png"></center>
@@ -143,7 +143,7 @@
 				<b>
 					<p><dd>Una vez dentro de cada tema, se obtiene el contenido HTML nuevamente a través del enlace obtenido en la primera parte. Y así para cada tema.</dd></p>
 					<p><dd>De este documento HTML, necesitaremos obtener <i>Título, número de respuestas al tema</i>, y todo el <i>contenido</i> de cada hilo del post.</dd></p>
-					<center><img style="width: 50%;" src="images/memoria11.jpeg"></center>
+					<center><img style="width: 50%;" src="images/memoria11.jpg"></center>
 					<ul>
 					<li type=”square”><p><dd>Una primera parte selecciona el contenido para obtener el <i>Título del tema</i>, recogido en la etiqueta <i>article.core-Thread</i>.</dd></p></li>
 					<center><img style="width: 50%;" src="images/memoria12.png"></center>
@@ -188,7 +188,7 @@
 					<p><dd>Para que el documento HTML recoja la información de forma indexada, utilicé las directivas propias de HTML escritas dentro de los parámetros (<i>Strings</i>) de información en el método <i>out.println()</i>. Una prueba de ello es la siguiente captura:</dd></p>
 					<center><img style="width: 50%;" src="images/memoria22.png"></center>
 					<center><p><i>Ejemplo de uso de directivas "p", "dd" y "br" de HTML.</i></p></center>
-					<center><img style="width: 50%;" src="images/memoria24.jpeg"></center>
+					<center><img style="width: 50%;" src="images/memoria24.jpg"></center>
 					<center><p><i>Captura del documento HTML obtenido, visto en Notepadd++.</i></p></center><br>
 					<p><dd>El resultado, es el documento HTML <i>outScrapping.html</i>, con todo el contenido indexado:</dd></p>
 					<center><img style="width: 50%;" src="images/memoria23.png"></center>
